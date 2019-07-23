@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+	<title>Shopping List</title>
+</head>
+
+
+<style type="text/css">
+
+
+</style>
+
+
+<body>
+
+
+<h2>Welcome to Grand Circus' Fruit Market!</h2>
+
+
+	<span>Strawberries $5.00
+	<button type="button"  onclick="addStrawberries('Strawberries $5.00')" id="strawberries">Add Item</button></span>
+	<br>
+
+	<span>Blueberries $6.00<button type="button" onclick="addBlueberries('Blueberries $6.00')" id="blueberries">Add Item</button></span>
+	<br>
+
+	<span>Oranges $4.00<button type="button" onclick="addOranges('Oranges $4.00')" id="oranges">Add Item</button></span>
+	<br>
+
+	<span>Apples $2.00<button type="button" onclick="addApples('Apples $2.00')" id="apples">Add Item</button></span>
+	<br>
+
+	<p><button type="button" onclick="checkout()" id="buttons5">Checkout</button></p>
+
+<div id="shoppingCart"></div>
+<div id="total"></div>
+
+
+
+
+
+<script>
+
+let subtotal = 0;
+let shoppingCart = [];
+
+let = strawberries = {name: "Strawberries", price: 5, quantity: 1};
+let = blueberries = {name: "Blueberries", price: 6, quantity: 1};
+let = oranges = {name: "Oranges", price: 4, quantity: 1};
+let = apples = {name: "Apples", price: 2, quantity: 1};
+
+function addStrawberries(){
+	if(shoppingCart.includes(strawberries) === false){
+		shoppingCart.push(strawberries);
+	} else {
+		strawberries.quantity += 1;
+	}
+	subtotal += 5;
+}
+
+function addBlueberries(){
+	if(shoppingCart.includes(blueberries) === false){
+		shoppingCart.push(blueberries);
+	} else {
+		blueberries.quantity += 1;
+	}
+	subtotal += 6;
+}
+
+function addOranges(){
+	if(shoppingCart.includes(oranges) === false){
+		shoppingCart.push(oranges);
+	} else {
+		oranges.quantity += 1;
+	}
+	subtotal += 4;
+}
+
+function addApples(){
+	if(shoppingCart.includes(apples) === false){
+		shoppingCart.push(apples);
+	} else {
+		apples.quantity += 1;
+	}
+	subtotal += 2;
+}
+
+function checkout(){
+  document.getElementById("shoppingCart").innerHTML = "Cart: <br/><br/>";
+  for(let i = 0; i < shoppingCart.length; i++){
+    document.getElementById("shoppingCart").innerHTML += shoppingCart[i].name + " x " + shoppingCart[i].quantity + ": $" + shoppingCart[i].price * shoppingCart[i].quantity + "<br/> ";
+  }
+  document.getElementById("total").innerHTML = "Subotal: $" + subtotal + "<br/> Total: $" + (subtotal*1.06).toFixed(2);
+}
+
+
+// let groceries = [];
+// function addItem(item) {
+	
+
+// 	groceries.push(item);
+	
+
+
+// 	// for (let grocery of groceries) {
+// 	// 	console.log(grocery);
+
+// 	// }
+// }
+
+// function display(){
+
+// for (let grocery of groceries) {
+// 		console.log(grocery);
+
+// 	}
+// }
+
+
+</script>
+
+
+</body>
+</html>
+
